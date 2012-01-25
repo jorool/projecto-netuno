@@ -13,13 +13,13 @@ hibernate {
 environments {
     development {
         dataSource {
-//          dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-//			driverClassName = "com.mysql.jdbc.Driver"
-//			url = "jdbc:mysql://localhost/projecto-netuno"
-//			username = "root"
-//			password = "admin"
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE"
-			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+          dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+			driverClassName = "com.mysql.jdbc.Driver"
+			url = "jdbc:mysql://localhost/projecto_netuno"
+			username = "root"
+			password = "admin"
+//            url = "jdbc:h2:mem:devDb;MVCC=TRUE"
+//			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
         }
     }
     test {
