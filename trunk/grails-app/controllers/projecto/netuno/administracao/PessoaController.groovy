@@ -2,5 +2,5 @@ package projecto.netuno.administracao
 
 class PessoaController {
 
-    def scaffold = Pessoa
+    //def scaffold = Pessoa
 }
