@@ -11,6 +11,6 @@ class Pais {
 		
     static constraints = {
 		nome nullable: false, blank: false, unique: true
-		codigoIBGE nullable: false, blank: false, unique: true
+		codigoIBGE unique: true
     }
 }
