@@ -11,12 +11,16 @@ import org.junit.*
 @TestFor(Pais)
 class PaisTests {
 
-	void newTest() {
+	void testNewPais() {
 		Pais pais = new Pais(nome: "pais teste", codigoIBGE: 0)
 		assertTrue pais.validate()
 	}
 	
-    void testSomething() {
-       fail "Implement me"
-    }
+	void testGetPais() {
+		Pais pais = new Pais(nome: "pais teste", codigoIBGE: 0)
+		pais.save();
+		
+		assertNotNull(Pais.get(pais.id))
+	}
+	
 }
