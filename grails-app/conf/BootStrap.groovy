@@ -1,10 +1,18 @@
 import projecto.netuno.administracao.Estado
 import projecto.netuno.administracao.Pais
-import projecto.netuno.administracao.PaisController;
+import projecto.netuno.administracao.Usuario
 
 class BootStrap {
 
     def init = { servletContext ->
+		/**
+		 * TIRAR ESSE CODIGO TODO DAQUI! FOI SOH UM TESTE!
+		 */
+		//cria usuario admin
+		if (!Usuario.findWhere(login:'admin')) {
+			new Usuario(nome: "admin", login: "admin", senha: "admin", email: "admin@admin.com").save(failOnError: true)
+		}
+		
 		//cria pais Brasil
 		if (!Pais.count) {
 			new Pais(codigoIBGE: 1, nome: "Brasil").save(failOnError: true)
