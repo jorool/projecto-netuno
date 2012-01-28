@@ -18,6 +18,7 @@ environments {
 			url = "jdbc:mysql://localhost/projecto_netuno"
 			username = "root"
 			password = "admin"
+			dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
 //            url = "jdbc:h2:mem:devDb;MVCC=TRUE"
 //			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
         }
