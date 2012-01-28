@@ -15,7 +15,7 @@ environments {
         dataSource {
           dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
 			driverClassName = "com.mysql.jdbc.Driver"
-			url = "jdbc:mysql://localhost/projecto_netuno"
+			url = "jdbc:mysql://localhost/projecto-netuno"
 			username = "root"
 			password = "admin"
 			dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
