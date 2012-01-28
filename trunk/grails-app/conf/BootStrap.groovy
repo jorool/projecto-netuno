@@ -1,6 +1,9 @@
-import projecto.netuno.administracao.Estado
-import projecto.netuno.administracao.Pais
-import projecto.netuno.administracao.Usuario
+import grails.plugins.springsecurity.SpringSecurityService;
+import netuno.administracao.Estado
+import netuno.administracao.Pais
+import netuno.administracao.PerfilUsuario;
+import netuno.administracao.Usuario
+import netuno.administracao.UsuarioPerfilUsuario;
 
 class BootStrap {
 
@@ -8,9 +11,22 @@ class BootStrap {
 		/**
 		 * TIRAR ESSE CODIGO TODO DAQUI! FOI SOH UM TESTE!
 		 */
-		//cria usuario admin
-		if (!Usuario.findWhere(login:'admin')) {
-			new Usuario(nome: "admin", login: "admin", senha: "admin", email: "admin@admin.com").save(failOnError: true)
+		
+		def SpringSecurityService
+		
+		def perfilUsuario = PerfilUsuario.findByAuthority("ROLE_USER") ?: new PerfilUsuario(authority:"ROLE_USER").save()
+		def perfilAdministrador = PerfilUsuario.findByAuthority("ROLE_ADMIN") ?: new PerfilUsuario(authority:"ROLE_ADMIN").save()
+		
+		def usuarios = Usuario.list() ?: []
+		if (!usuarios) {
+			def admin = new Usuario(
+				username: "admin", 
+				password: SpringSecurityService.encodePassword("netuno"), 
+				enabled: true
+				)
+			admin.save()
+			
+			UsuarioPerfilUsuario.create usuario, perfilUsuario
 		}
 		
 		//cria pais Brasil
