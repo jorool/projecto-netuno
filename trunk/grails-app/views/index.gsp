@@ -77,14 +77,6 @@
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="status" role="complementary">
-		<span class="menuButton"><g:link class="menu" controller="menu" action="display">
-  		<g:message code="menu.display" default="Menu" /></g:link></span>
-			<h1>Cadastros</h1>
-			<ul>
-				<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-					<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.name}</g:link></li>
-				</g:each>
-			</ul>
 			<h1>Application Status</h1>
 			<ul>
 				<li>App version: <g:meta name="app.version"/></li>

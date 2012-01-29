@@ -1,3 +1,4 @@
+package netuno.administracao
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 
 class LogoutController {
