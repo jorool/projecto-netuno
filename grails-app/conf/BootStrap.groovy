@@ -21,12 +21,12 @@ class BootStrap {
 		if (!usuarios) {
 			def admin = new Usuario(
 				username: "admin", 
-				password: SpringSecurityService.encodePassword("netuno"), 
+				password: "netuno",
 				enabled: true
 				)
 			admin.save()
 			
-			UsuarioPerfilUsuario.create usuario, perfilUsuario
+			UsuarioPerfilUsuario.create admin, perfilAdministrador
 		}
 		
 		//cria pais Brasil
