@@ -5,12 +5,17 @@
 </script>
 
 <div id="menu">
-	<h3><a href="#">Administração</a></h3>
+	<h3><a href="#">Cadastros</a></h3>
 	<div>
+		<h4>Administrativos</h4>
 		<%-- conteudo administracao --%>
-		
-		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">Pais</a>
-		
+		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">Pais</a><br>
+		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">Pais</a><br>
+		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">Pais</a><br>
+		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">Pais</a><br>
+		<h4>Estoque</h4>
+		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">Pais</a><br>
+		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">Pais</a><br>
 	</div>
 	
 	<h3><a href="#">Estoque</a></h3>

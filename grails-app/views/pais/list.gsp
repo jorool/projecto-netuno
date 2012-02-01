@@ -12,7 +12,7 @@
 	</head>
 	<body>
 	
-		<h3>Listagem de Pais</h3>
+<%--		<h3>Listagem de Pais</h3>--%>
 			
 			<sol:toolBarEdicaoGrid controller="pais" idGrid="gridPais" />
 			
@@ -22,7 +22,7 @@
 			
 			<sol:jgrid id="gridPais" modelo="netuno.administracao.Pais">
 				<sol:column name="codigoIBGE" label="Código IBGE" width="100" />
-				<sol:column name="nome" label="Descrição" width="300" />
+				<sol:column name="nome" label="Nome" width="300" />
 			</sol:jgrid>
 			
 		</div>
