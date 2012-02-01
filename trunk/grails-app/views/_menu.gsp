@@ -1,6 +1,8 @@
 <script type="text/javascript">
 	$(function(){
-			$("#menu").accordion();
+			$("#menu").accordion({
+				collapsible: true
+			});
 		});
 </script>
 
@@ -9,8 +11,8 @@
 	<div>
 		<h4>Administrativos</h4>
 		<%-- conteudo administracao --%>
-		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">Pais</a><br>
-		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">Pais</a><br>
+		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">País</a><br>
+		<a href="#" onclick="criarTab('estado/list', 'Estado'); return false;">Estado</a><br>
 		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">Pais</a><br>
 		<a href="#" onclick="criarTab('pais/list', 'Pais'); return false;">Pais</a><br>
 		<h4>Estoque</h4>
