@@ -11,8 +11,8 @@ class PaisController {
     }
 
     def list() {
-        params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        [paisInstanceList: Pais.list(params), paisInstanceTotal: Pais.count()]
+        //params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        //[paisInstanceList: Pais.list(params), paisInstanceTotal: Pais.count()]
     }
 
     def create() {
@@ -41,6 +41,8 @@ class PaisController {
         [paisInstance: paisInstance]
     }
 
+	
+	
     def edit() {
         def paisInstance = Pais.get(params.id)
         if (!paisInstance) {
@@ -81,23 +83,38 @@ class PaisController {
 		flash.message = message(code: 'default.updated.message', args: [message(code: 'pais.label', default: 'Pais'), paisInstance.id])
         redirect(action: "show", id: paisInstance.id)
     }
+	
+//	def delete(){
+//		println params;
+//		
+//		def ret = [msg: "Teste"];
+//		
+//		redirect(action: 'list')
+//		//render ret.encodeAsJSON();
+//		
+//	}
 
     def delete() {
+		def retorno = [success:true, msg:''];
+		
         def paisInstance = Pais.get(params.id)
         if (!paisInstance) {
-			flash.message = message(code: 'default.not.found.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
-            redirect(action: "list")
-            return
+			retorno.msg =  message(code: 'default.not.found.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
+            retorno.success = false;
+            
+        }else{
+	        try {
+	            paisInstance.delete(flush: true)
+				retorno.msg = message(code: 'default.deleted.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
+	            
+	        }
+	        catch (DataIntegrityViolationException e) {
+				retorno.msg = message(code: 'default.not.deleted.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
+				retorno.success = false;
+	            
+	        }
         }
-
-        try {
-            paisInstance.delete(flush: true)
-			flash.message = message(code: 'default.deleted.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
-            redirect(action: "list")
-        }
-        catch (DataIntegrityViolationException e) {
-			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
-            redirect(action: "show", id: params.id)
-        }
+		
+		render retorno.encodeAsJSON();
     }
 }
