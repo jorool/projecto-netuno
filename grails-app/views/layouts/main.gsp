@@ -34,6 +34,10 @@
 <g:javascript src="jquery-ui-1.8.17.custom.min.js" />
 <g:javascript src="mensagens.js" />
 <g:javascript src="ajax.js" />
+<g:javascript src="validator/jquery.validate.min.js" />
+<g:javascript src="validator/messages_ptbr.js" />
+
+
 </head>
 <body>
 	<g:layoutBody />
