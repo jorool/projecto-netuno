@@ -1,4 +1,4 @@
-<g:javascript src="jquery-ui-1.8.17.custom.min.js" />
+
 
 
 

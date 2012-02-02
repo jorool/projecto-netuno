@@ -5,7 +5,7 @@ $(function(){
 			//seleciona a nova aba ao adiciona-la
 			$tabs.tabs('select', '#' + ui.panel.id);
 			
-			var content = "<iframe src='" + tab_url + "' style='width:100%;height:100%' />";
+			var content = "<iframe src='" + tab_url + "' frameborder='0' style='width:100%;height:100%' />";
 			
 			$(ui.panel).html(content);
 			

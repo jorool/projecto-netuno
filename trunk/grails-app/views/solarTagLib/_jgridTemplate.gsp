@@ -1,7 +1,5 @@
 
-<g:javascript library="jquery" />
-<g:javascript src="jgrid/grid.locale-pt-br.js" />
-<g:javascript src="jgrid/jquery.jqGrid.min.js" />
+
 <%--<g:javascript src="jgrid/jquery.jqGrid.src.js" />--%>
 <script type="text/javascript">
 $(function(){

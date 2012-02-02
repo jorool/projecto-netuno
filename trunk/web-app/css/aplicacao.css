@@ -14,3 +14,26 @@
 	background-image: url(../images/minus-circle.png);
 }
 
+
+.ui-state-default .ui-icon-cancelar{
+	background-image: url(../images/cross-circle.png);
+}
+
+.ui-state-default .ui-icon-salvar{
+	background-image: url(../images/disquete.gif);
+}
+
+body{
+	font-size: 12px;
+}
+
+.spinner {
+	background: url(../images/spinner.gif) 50% 50% no-repeat transparent;
+	height: 16px;
+	width: 16px;
+    padding: 0.5em;
+    position: absolute;
+    right: 0;
+	top: 0;
+	text-indent: -9999px;
+}

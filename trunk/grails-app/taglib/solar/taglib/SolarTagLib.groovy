@@ -184,5 +184,32 @@ class SolarTagLib {
 	 
 	 out << render (template:"/solarTagLib/toolBarEdicaoGrid", model:[attrs:attrs])
  }
+ 
+ /**
+ * Toolbar para os botões de edição da grid
+ * @attr idForm REQUIRED id da grid em que os botões vão operar
+ * @attr controller REQUIRED controller para realizar as ações dos botões
+ */
+ def toolBarSalvar = { attrs ->
+	 
+	 if(!attrs.idForm){
+		 throwTagError("O atributo idForm da tag toolBarSalvar é obrigatório")
+	 }
+	 
+	 if(!attrs.controller){
+		 throwTagError("O atributo controller da tag toolBarSalvar é obrigatório")
+	 }
+	 
+	 
+	 out << render (template:"/solarTagLib/toolBarSalvar", model:[attrs:attrs])
+ }
+ 
+ /**
+  * Pega as mensagens (mensagemErro e mensagemInfo) do flash e exibe para o usuario
+  */
+ def mensagens = {attrs ->
+	 
+	 out << render (template:"/solarTagLib/mensagens");
+ }
 	
 }
