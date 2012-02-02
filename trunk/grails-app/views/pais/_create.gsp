@@ -6,12 +6,12 @@
 
 
 	<div class="fm-req">
-		<label for="txtCodigoIbge">Código IBGE</label> <input
-			name="codigoIBGE" id="txtCodigoIbge" type="text" />
+		<label for="txtCodigoIbge">Código IBGE</label> 
+		<input name="codigoIBGE" id="txtCodigoIbge" type="text" class="required"/>
 	</div>
 	<div class="fm-req">
-		<label for="txtNome">Nome</label> <input name="nome" id="txtNome"
-			type="text" />
+		<label for="txtNome">Nome</label> 
+		<input name="nome" id="txtNome" type="text" class="required"/>
 	</div>
 
 	<sol:toolBarSalvar idForm="formPais" controller="pais" />

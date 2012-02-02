@@ -12,6 +12,12 @@ label{
 	text-align:right;
 }
 
+label.error{
+	float:none;
+	text-align:left;
+	color: red;
+}
+
 form div{
 	margin-bottom:.5em;
 	padding:0;
