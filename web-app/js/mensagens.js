@@ -11,15 +11,15 @@ function criaMensagemErro(mensagem, classErro){
 	return erro;
 }
 
-function mostraMensagemErroEmGrid(idGrid, mensagem){
+function mostraMensagemErro(id, mensagem){
 	
-	var classErro = idGrid + "_msg_erro";
+	var classErro = "msg_erro";
 	
 	limparMensagens();
 	
 	var msg = criaMensagemErro(mensagem, classErro);
 	
-	$(msg).prependTo("#gbox_" + idGrid).hide().show(300).effect("highlight", {}, 1000);
+	$(msg).prependTo("#" + id).hide().show(300).effect("highlight", {}, 1000);
 }
 
 function criaMensagemInfo(mensagem, classInfo){
@@ -34,21 +34,21 @@ function criaMensagemInfo(mensagem, classInfo){
 }
 
 function mostraMensagemInfo(id, mensagem){
-	var classeInfo = id + "_msg_info";
+	var classeInfo = "msg_info";
 	
-	limparMensagens(id);
+	limparMensagens();
 	
 	var msg = criaMensagemInfo(mensagem, classeInfo);
 	
-	$(msg).prependTo("#gbox_" + id).hide().show(300);
+	$(msg).prependTo("#" + id).hide().show(300);
 }
 
-function limparMensagens(id){
-	var classeInfo = id + "_msg_info";
+function limparMensagens(){
+	var classeInfo = "msg_info";
 	
 	$("." + classeInfo).hide();
 	
-	var classErro = id + "_msg_erro";
+	var classErro = "msg_erro";
 	
 	$("." + classErro).hide();
 }

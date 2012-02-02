@@ -7,34 +7,43 @@ class PaisController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
-        redirect(action: "list", params: params)
+       // redirect(action: "list", params: params)
     }
 
-    def list() {
+    def _list() {
         //params.max = Math.min(params.max ? params.int('max') : 10, 100)
         //[paisInstanceList: Pais.list(params), paisInstanceTotal: Pais.count()]
     }
+	
+	def list(){
+		render(template: "list")
+	}
 
     def create() {
-        [paisInstance: new Pais(params)]
+//        [paisInstance: new Pais(params)]
+		
+		render(template: "create")
     }
 
+
+	
     def save() {
         def paisInstance = new Pais(params)
         if (!paisInstance.save(flush: true)) {
-            render(view: "create", model: [paisInstance: paisInstance])
+			flash.mensagemErro = "Erro ao salvar pais"
+            render(view: "_create", model: [paisInstance: paisInstance])
             return
         }
 
-		flash.message = message(code: 'default.created.message', args: [message(code: 'pais.label', default: 'Pais'), paisInstance.id])
-        redirect(action: "show", id: paisInstance.id)
+		flash.mensagemInfo = message(code: 'default.created.message', args: [message(code: 'pais.label', default: 'Pais'), paisInstance.id])
+        redirect(action: "list")
     }
 
     def show() {
         def paisInstance = Pais.get(params.id)
         if (!paisInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
-            redirect(action: "list")
+            redirect(action: "_list")
             return
         }
 
@@ -47,7 +56,7 @@ class PaisController {
         def paisInstance = Pais.get(params.id)
         if (!paisInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
-            redirect(action: "list")
+            redirect(action: "_list")
             return
         }
 
@@ -58,7 +67,7 @@ class PaisController {
         def paisInstance = Pais.get(params.id)
         if (!paisInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
-            redirect(action: "list")
+            redirect(action: "_list")
             return
         }
 
