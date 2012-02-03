@@ -18,19 +18,16 @@ label.error{
 	color: red;
 }
 
+input.error{
+	border: 1px solid red;
+}
+
 form div{
 	margin-bottom:.5em;
 	padding:0;
 	display:block;
 }
 
-form div input,form div textarea{
-	width:150px;
-	border-top:1px solid #555;
-	border-left:1px solid #555;
-	border-bottom:1px solid #ccc;
-	border-right:1px solid #ccc;
-	padding:1px;color:#333;}
 
 form div select{
 	padding:1px;
@@ -65,10 +62,6 @@ div.fm-multi label{
 	font-size:100%;
 }
 
-input:focus,textarea:focus{
-	background:#efefef;
-	color:#000;
-}
 
 form div.fm-req{
 	font-weight:bold;

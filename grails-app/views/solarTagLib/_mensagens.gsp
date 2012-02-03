@@ -16,3 +16,13 @@
 			</script>
 			<div id="msg_info_flash"></div>
 </g:if>
+
+<g:hasErrors>
+    <g:eachError>
+    <script type="text/javascript">
+				$(function(){
+					mostraMensagemErro("msg_erro_flash", "${it.defaultMessage}");
+				});
+			</script>
+    </g:eachError>
+</g:hasErrors> 
