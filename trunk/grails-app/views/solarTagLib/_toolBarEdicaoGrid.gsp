@@ -37,7 +37,7 @@
 </script>
 
 <sol:button  id="${attrs.idGrid}_btnCreate" controller="${attrs.controller}" action="create" icon="ui-icon-novo" ajax="true" method="GET" onAjaxSuccess="mudaPagina">Novo</sol:button>
-<sol:button id="${attrs.idGrid}_btnEditar" onclick="editar()" controller="${attrs.controller}" action="edit" icon="ui-icon-editar">Editar</sol:button>
+<sol:button id="${attrs.idGrid}_btnEditar" onclick="editar()" controller="${attrs.controller}" action="edit" icon="ui-icon-editar" ajax="true" method="GET" onAjaxSuccess="mudaPagina">Editar</sol:button>
 <sol:button id="${attrs.idGrid}_btnExcluir" onclick="excluir()" ajax="true" method="POST" 
 				controller="${attrs.controller}" action="delete" onAjaxSuccess="posExcluir" icon="ui-icon-excluir">Excluir</sol:button>
 				
