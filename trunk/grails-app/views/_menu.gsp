@@ -11,13 +11,10 @@
 	<div>
 		<h4>Administrativos</h4>
 		<%-- conteudo administracao --%>
+		<a href="#" onclick="criarTab('pessoa/', 'Pessoa'); return false;">Cliente/Fornecedor</a><br>
 		<a href="#" onclick="criarTab('pais/', 'Pais'); return false;">País</a><br>
 		<a href="#" onclick="criarTab('estado/', 'Estado'); return false;">Estado</a><br>
-		<a href="#" onclick="criarTab('pais/', 'Pais'); return false;">Pais</a><br>
-		<a href="#" onclick="criarTab('pais/', 'Pais'); return false;">Pais</a><br>
 		<h4>Estoque</h4>
-		<a href="#" onclick="criarTab('pais/', 'Pais'); return false;">Pais</a><br>
-		<a href="#" onclick="criarTab('pais/', 'Pais'); return false;">Pais</a><br>
 	</div>
 	
 	<h3><a href="#">Estoque</a></h3>
