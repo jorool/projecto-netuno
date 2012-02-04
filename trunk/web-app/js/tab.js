@@ -1,6 +1,5 @@
 $(function(){
 	var $tabs = $("#tabs").tabs({
-		sortable: true,
 		tabTemplate: "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close'>Remove Tab</span></li>",
 		add: function(event, ui){
 			// seleciona a nova aba ao adiciona-la
