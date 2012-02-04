@@ -10,6 +10,7 @@ $(function(){
 			${colModel}
 			rowNum: 10,
 			rowList: [10, 20, 30],
+			height: 230,
 			pager: '${attrs.id}_pager',
 			sortname: 'id',
 			viewrecords: true,

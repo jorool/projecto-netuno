@@ -47,18 +47,17 @@
 				</div>
 			</div>
 
-						</div>
-
-			<div id="auxiliar">
-				<g:render template="menu" contextPath="/" />
-			</div>
-			<div id="clear"></div>
 		</div>
-		<!-- Fim div#conteudo -->
 
-		<div id="rodape"></div>
-
+		<div id="auxiliar">
+			<g:render template="menu" contextPath="/" />
+		</div>
+		<div id="clear"></div>
 	</div>
+	<!-- Fim div#conteudo -->
+
+	<div id="rodape"></div>
+
 	<!-- Fim div#tudo -->
 </body>
 </html>
