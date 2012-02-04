@@ -8,11 +8,10 @@ $(function(){
 			var content = "<iframe src='" + tab_url + "' frameborder='0' style='width:100%;height:100%' />";
 			
 			$(ui.panel).html(content);
-			
 		}
 	});
 	
-	 // close icon: removing the tab on click
+	// close icon: removing the tab on click
     // note: closable tabs gonna be an option in the future - see
 	// http://dev.jqueryui.com/ticket/3924
     $( "#tabs span.ui-icon-close" ).live( "click", function() {
@@ -38,6 +37,7 @@ function criarTab(url, titulo){
 		{
 			tab_url = url;
 			$("#tabs").tabs("add", "#tabContent" + counter++, titulo);
+			$("#tabs").tabs().find(".ui-tabs-nav").sortable({axis: "x"});
 		}
 	else
 		{
