@@ -4,7 +4,7 @@
 <script type="text/javascript">
 $(function(){
 	$('#${attrs.id}').jqGrid({
-			url: '${g.createLink(controller:'jqgrid', action:'list')}?modelo=${attrs.modelo}',
+			url: '${g.createLink(controller:'jqgrid', action:'list')}?modelo=${attrs.modelo}&colunas=${colArgs}',
 			datatype: 'json',			
 			${colNames}
 			${colModel}

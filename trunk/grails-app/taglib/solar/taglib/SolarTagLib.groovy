@@ -27,6 +27,7 @@ class SolarTagLib {
 		
 		def colNames = null
 		def colModel = null
+		def colArgs = null
 		
 		def columns = body()?.toString()
 		
@@ -37,11 +38,21 @@ class SolarTagLib {
 			colNames = criarColNames(colunas)
 			
 			colModel = criarColModel(colunas)
+			
+			colArgs = criaArgColName(colunas)
 		}
 		
-		out << render(template:"/solarTagLib/jgridTemplate", model:[attrs:attrs, colNames:colNames, colModel:colModel])
+		out << render(template:"/solarTagLib/jgridTemplate", model:[attrs:attrs, colNames:colNames, colModel:colModel, colArgs:colArgs])
 		
 
+	}
+	
+	private String criaArgColName(colunas){
+		def args = ""
+		colunas.each { col ->
+			args += "${col.name};"
+		}
+		args
 	}
 
 	private String criarColModel(colunas) {
