@@ -44,11 +44,43 @@ class JqgridController {
 				
 		println params
 		
+		def colunas = params.colunas.split(";")
 		
-		def resposta = [page:"${params.page}", total:"${total}", records:records.size(), rows:records].encodeAsJSON()
+		println colunas
+		
+		def retorno  = records.collect { rec ->
+			def obj = [:]
+			
+			colunas.each { col ->
+				obj.put(col, getProperty(rec, col))
+			}
+			
+			println obj
+			
+			obj
+		} 
+		
+		
+		
+		def resposta = [page:"${params.page}", total:"${total}", records:records.size(), rows:retorno].encodeAsJSON()
 		
 	    render resposta
 		
+	}
+	
+	private def getProperty(obj, String str){
+		if(str.contains(".")){
+			def par = str.split("\\.");
+			def ret = obj
+			par.each {
+				println "property: ${it}"
+				ret = ret."${it}"
+			}
+			
+			return ret
+		}
+		
+		return obj."${str}"
 	}
 
 	private String criaFrom(String operador, Map params) {
