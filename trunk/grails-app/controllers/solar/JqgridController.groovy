@@ -41,6 +41,8 @@ class JqgridController {
 		def colunas = params.colunas.split(";")
 		
 		
+		
+		
 		def retorno  = records.collect { rec ->
 			def obj = [:]
 			
@@ -48,8 +50,8 @@ class JqgridController {
 				obj.put(col, getProperty(rec, col))
 			}
 			
-			println obj
-			
+			obj.id = rec.id
+		
 			obj
 		} 
 		
@@ -66,14 +68,16 @@ class JqgridController {
 			def par = str.split("\\.");
 			def ret = obj
 			par.each {
-				println "property: ${it}"
 				ret = ret."${it}"
 			}
 			
 			return ret
 		}
 		
-		return obj."${str}"
+		
+		def ret = obj."${str}"
+		
+		return ret
 	}
 
 	private String criaFrom(String operador, Map params) {
