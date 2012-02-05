@@ -13,7 +13,7 @@
 	</div>
 
 	<div>
-		<label for="txtNome">Descrição</label> 
+		<label for="txtDescricao">Descrição</label> 
 		<input name="descricao" id="txtDescricao" type="text" value="${instance?.nome}"/>
 	</div>
 	
