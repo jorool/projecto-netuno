@@ -18,7 +18,7 @@
 	
 	<div>
 		<label for="txtDescricao">Descrição</label> 
-		<input name="descricao" id="txtDescricao" type="text" value="${instance?.decricao}"/>
+		<input name="descricao" id="txtDescricao" type="text" value="${instance?.descricao}"/>
 	</div>
 	
 	<div class="fm-req">

@@ -35,15 +35,15 @@
 	<div id="tudo">
 
 		<div id="auxiliar">
-<%--			<div id="logo">--%>
-<%--				asdasdasdas	--%>
-<%--			</div>--%>
+		
+			<div id="logo">
+			</div>
+			
 			<g:render template="menu" contextPath="/" />
 		</div>
 		
 		<div id="conteudo">
 			<div id="principal">
-
 				<div id="tabs">
 					<ul>
 
