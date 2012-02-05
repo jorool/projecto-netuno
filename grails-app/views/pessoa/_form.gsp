@@ -15,17 +15,17 @@
 		<label for="txtNome">Nome</label> 
 		<input name="nome" id="txtNome" type="text" class="required" value="${instance?.nome}"/>
 	</div>
-	<div class="fm-req">
+	<div>
 		<label for="txtTelefone">Telefone</label>
-		<input name="telefone" id="txtTelefone" type="text" class="required" value="${instance?.telefone}"/>
+		<input name="telefone" id="txtTelefone" type="text" value="${instance?.telefone}"/>
 	</div>
-	<div class="fm-req">
+	<div>
 		<label for="txtCelular">Celular</label>
-		<input name="celular" id="txtCelular" type="text" class="required" value="${instance?.celular}"/>
+		<input name="celular" id="txtCelular" type="text" value="${instance?.celular}"/>
 	</div>
-	<div class="fm-req">
+	<div>
 		<label for="txtFax">Fax</label>
-		<input name="fax" id="txtFax" type="text" class="required" value="${instance?.fax}"/>
+		<input name="fax" id="txtFax" type="text" value="${instance?.fax}"/>
 	</div>
 	<div class="fm-req">
 		<label for="cbTipoPessoa">Tipo</label>
