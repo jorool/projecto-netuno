@@ -1,8 +1,6 @@
 package netuno.administracao
 
-import org.springframework.dao.DataIntegrityViolationException
-
-import solar.SolarBaseController;
+import solar.SolarBaseController
 
 class EstadoController extends SolarBaseController {
 
