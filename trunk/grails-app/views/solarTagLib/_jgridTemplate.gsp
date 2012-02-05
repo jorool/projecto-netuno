@@ -22,7 +22,7 @@ $(function(){
 			      total: "total",
 			      records: "records",
 			      repeatitems: false,
-			      id: "id"
+			      id: 0
 			   },
 			
 		});

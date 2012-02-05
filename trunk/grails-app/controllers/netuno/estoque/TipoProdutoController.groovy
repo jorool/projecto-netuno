@@ -4,6 +4,6 @@ import netuno.estoque.TipoProduto;
 
 class TipoProdutoController {
 
-	def scaffod = TipoProduto
+
 	
 }

@@ -4,5 +4,5 @@ import netuno.estoque.TipoMovimento;
 
 class TipoMovimentoController {
 
-    def scaffold = TipoMovimento
+    
 }

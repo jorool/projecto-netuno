@@ -5,7 +5,7 @@ class Estado {
 	String nome
 	String sigla
 	String codigoIBGE
-	
+ 	
 	static belongsTo = [pais:Pais]
 
 	String toString() {

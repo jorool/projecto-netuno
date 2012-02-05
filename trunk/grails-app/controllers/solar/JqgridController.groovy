@@ -37,16 +37,9 @@ class JqgridController {
 			records = classe.list(max: max, offset:offset, sort:params.sidx, order:params.sord)
 			total = Math.ceil(classe.count() / Double.parseDouble(params.rows))
 		}
-		
-		
 
-		
-				
-		println params
-		
 		def colunas = params.colunas.split(";")
 		
-		println colunas
 		
 		def retorno  = records.collect { rec ->
 			def obj = [:]

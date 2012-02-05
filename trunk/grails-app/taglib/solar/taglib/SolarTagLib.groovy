@@ -157,6 +157,7 @@ class SolarTagLib {
 	 * @attr id REQUIRED id do autocomplete para o jquery identifica-lo
 	 * @attr controller REQUIRED controller para realizar a busca para preencher o autocomplete
 	 * @attr action DEFAULT "autocomplete" qual a ação do controller sera realizada
+	 * @attr searchField REQUIRED nome do campo que ira ser realizado a pesquisa
 	 * @attr name 
 	 * @attr classeCss Classe css do componente
 	 * @attr style estilo css do componente
@@ -168,7 +169,11 @@ class SolarTagLib {
 		}
 		
 		if(!attrs.controller){
-			throwTagError("O atributo id da tag button é obrigatório")
+			throwTagError("O atributo controller da tag button é obrigatório")
+		}
+		
+		if(!attrs.searchField){
+			throwTagError("O atributo searchField da tag button é obrigatório")
 		}
 		
 		if(!attrs.action){

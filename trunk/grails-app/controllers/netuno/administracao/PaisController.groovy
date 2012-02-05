@@ -17,12 +17,6 @@ class PaisController extends SolarBaseController{
 		Pais.get(id)
 	}
 	
-	def autocomplete(){
-		def paises = Pais.findByNomeLike("${params.term}%")
-		
-		def d = paises.collect { [id:it.id, label:it.nome] }
-		
-		render d.encodeAsJSON()
-	}
+
 	
 }
