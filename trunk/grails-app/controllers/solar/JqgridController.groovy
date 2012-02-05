@@ -95,6 +95,7 @@ class JqgridController {
 			default:
 				from = "from ${params.modelo} o where o.${params.searchField} ${operador} '${params.searchString}'"
 		}
+		
 		return from
 	}
 
