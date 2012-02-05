@@ -15,7 +15,7 @@ class Estado {
     static constraints = {
 		nome nullable: false, blank: false, unique: true
 		sigla nullable: false, blank: false, unique: true
-		codigoIBGE nullable: true, blank: false, unique: true
+		codigoIBGE nullable: true
 		pais nullable: false
     }
 }

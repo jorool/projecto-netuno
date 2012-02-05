@@ -27,16 +27,20 @@
 					var wDoc = $(document).width();
 					var wAux = $("#auxiliar").width();
 					$("#principal").width(wDoc - wAux - 50);
-					
 				});
-		</script>
+</script>
 
 </head>
 <body>
 	<div id="tudo">
 
-		<div id="topo"></div>
-
+		<div id="auxiliar">
+<%--			<div id="logo">--%>
+<%--				asdasdasdas	--%>
+<%--			</div>--%>
+			<g:render template="menu" contextPath="/" />
+		</div>
+		
 		<div id="conteudo">
 			<div id="principal">
 
@@ -46,18 +50,11 @@
 					</ul>
 				</div>
 			</div>
-
 		</div>
 
-		<div id="auxiliar">
-			<g:render template="menu" contextPath="/" />
-		</div>
-		<div id="clear"></div>
-	</div>
-	<!-- Fim div#conteudo -->
-
-	<div id="rodape"></div>
+		<div id="rodape">roda o pé</div>
 
 	<!-- Fim div#tudo -->
+	</div>
 </body>
 </html>

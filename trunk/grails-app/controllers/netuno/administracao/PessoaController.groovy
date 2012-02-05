@@ -1,9 +1,16 @@
 package netuno.administracao
 
-import netuno.administracao.Pessoa;
+import solar.SolarBaseController;
 
-class PessoaController {
- 
-	
-	   
+class PessoaController extends SolarBaseController {
+
+	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+
+	def novaInstancia(atributos){
+		new Pessoa(atributos)
+	}
+
+	def obterInstancia(id){
+		Pessoa.get(id)
+	}
 }
