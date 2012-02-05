@@ -121,4 +121,26 @@ class SolarBaseController {
 		
 		render retorno.encodeAsJSON();
     }
+	
+	
+	private Class getClassEntity(){
+		String classe = getClass().name
+		classe = classe.substring(0, classe.indexOf("Controller"))
+		
+		grailsApplication.classLoader.loadClass(classe)
+		
+	}
+	
+	def autocomplete(){
+		
+		def domainClass = getClassEntity()
+		
+		def hql = "FROM ${domainClass.name} o WHERE o.${params.searchField} like '${params.term}%'"
+		
+		def entidades = domainClass.findAll(hql)
+		
+		def d = entidades.collect { [id:it.id, label:it."${params.searchField}"] }
+		
+		render d.encodeAsJSON()
+	}
 }

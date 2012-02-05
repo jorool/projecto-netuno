@@ -4,5 +4,5 @@ import netuno.administracao.Endereco;
 
 class EnderecoController {
 
-    def scaffold = Endereco
+   
 }
