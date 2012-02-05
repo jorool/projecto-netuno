@@ -12,10 +12,10 @@ class Produto {
 	static belongsTo = [tipoProduto:TipoProduto]
 
     static constaints = {
-		codigo(nullable:false, black:false, unique:true)
-		nome(nullable:false, black:false, unique:true)
-		tipoProduto(nullable:false)
-		saldoEstoqueFisico(nullable:false)
-		valorUnitario(nullable:false)
+		codigo nullable: false, black: false, unique: true
+		nome nullable: false, black: false, unique: true
+		tipoProduto nullable: false
+		saldoEstoqueFisico nullable: false
+		valorUnitario nullable: false
     }
 }

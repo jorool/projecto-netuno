@@ -8,7 +8,7 @@
 <form id="formPessoa">
 
 	<div class="fm-req">
-		<label for="txtNome">Código</label> 
+		<label for="txtCodigo">Código</label> 
 		<input name="codigo" id="txtCodigo" type="text" class="required" value="${instance?.codigo}"/>
 	</div>
 	<div class="fm-req">
