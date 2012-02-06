@@ -1,6 +1,6 @@
 <%@ page import="netuno.administracao.Pais" %>
 
-<h2 class="ui-state-default">Cadastro de Pais</h2>
+<h2 class="ui-state-default">Cadastro de país</h2>
 
 <sol:mensagens />
 

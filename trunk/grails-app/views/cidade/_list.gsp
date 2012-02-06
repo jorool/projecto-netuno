@@ -1,4 +1,4 @@
-<h2 class="ui-state-default">Listagem de Cidade</h2>
+<h2 class="ui-state-default">Listagem de cidade</h2>
 
 <sol:toolBarEdicaoGrid controller="cidade" idGrid="gridCidade" />
 
