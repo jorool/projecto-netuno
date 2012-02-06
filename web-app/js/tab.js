@@ -41,12 +41,11 @@ function criarTab(url, titulo){
 		}
 	else
 		{
+			var index
 			$('#tabs ul li a').each(function(i) {
-			    if (this.text == titulo) {$('#reqTab').val(i)}
-			});
-	
-			$("#tabs").tabs({
-			    selected: $('#reqTab').val()
+			    if (this.text == titulo) {
+			    	$('#tabs').tabs('select', i);
+			    }
 			});
 		}
 	
