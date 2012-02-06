@@ -26,7 +26,7 @@
 				$(function(){
 					var wDoc = $(document).width();
 					var wAux = $("#auxiliar").width();
-					$("#principal").width(wDoc - wAux - 50);
+					$("#principal").width(wDoc - wAux - 20);
 				});
 </script>
 
@@ -51,10 +51,8 @@
 				</div>
 			</div>
 		</div>
-
-		<div id="rodape">roda o pé</div>
-
 	<!-- Fim div#tudo -->
 	</div>
+	<div class="south">Copyright 2012 - <a href="">Carladas Solutions</a></div>
 </body>
 </html>
