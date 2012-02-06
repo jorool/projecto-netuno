@@ -1,6 +1,6 @@
 <%@ page import="netuno.estoque.TipoProduto" %>
 
-<h2 class="ui-state-default">Cadastro de Tipo de produto</h2>
+<h2 class="ui-state-default">Cadastro de tipo de produto</h2>
 
 <sol:mensagens />
 

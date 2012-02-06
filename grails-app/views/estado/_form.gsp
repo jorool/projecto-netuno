@@ -1,6 +1,6 @@
 <%@ page import="netuno.administracao.Estado" %>
 
-<h2 class="ui-state-default">Cadastro de Estado</h2>
+<h2 class="ui-state-default">Cadastro de estado</h2>
 
 <sol:mensagens />
 

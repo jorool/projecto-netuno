@@ -1,6 +1,6 @@
 <%@ page import="netuno.administracao.Cidade" %>
 
-<h2 class="ui-state-default">Cadastro de Cidade</h2>
+<h2 class="ui-state-default">Cadastro de cidade</h2>
 
 <sol:mensagens />
 
