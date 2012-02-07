@@ -19,7 +19,11 @@
 }
 
 .ui-state-default .ui-icon-salvar {
-	background-image: url(../images/disquete.gif);
+	background-image: url(../images/disk-black.png);
+}
+
+.ui-state-default .ui-icon-pesquisar {
+	background-image: url(../images/magnifier--arrow.png);
 }
 
 html,body {
@@ -55,6 +59,7 @@ html,body {
 .east {
 	width: 25em;
 	height: 100%;
+	width: 180px;
 /* 	font-size: 0.78em; */
 }
 
