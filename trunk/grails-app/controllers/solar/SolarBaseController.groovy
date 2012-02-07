@@ -1,22 +1,24 @@
 package solar
 
+import grails.plugins.springsecurity.Secured;
 import netuno.administracao.Pais
 
 import org.springframework.dao.DataIntegrityViolationException
 
 class SolarBaseController {
-	
-	def novaInstancia(atributos){
+
+	def springSecurityService
 		
+	def novaInstancia(atributos){
 	}
 	
 	def obterInstancia(id){
-		
 	}
 	
 	def index(){
 	}
 	
+	@Secured(['ROLE_USER'])
 	def list(){
 		render(template: "list")
 	}
