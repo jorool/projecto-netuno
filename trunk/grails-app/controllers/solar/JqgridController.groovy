@@ -1,10 +1,39 @@
 package solar
 
-import netuno.administracao.Pais
+import java.text.DateFormat;
+import java.text.SimpleDateFormat
+
+import solar.historico.Historico
+
 
 class JqgridController {
 
     def index() { }
+	
+	def historico(){
+		println params
+		
+		def max = Integer.parseInt(params.rows)
+		
+		def offset = (Integer.parseInt(params.page) - 1) * max
+		
+		def count = Historico.countByEntidadeAndIdEntidade(params.modelo, params.idEntidade.toLong())
+		
+		def total = Math.ceil(count / Double.parseDouble(params.rows))
+		
+		def historicos = Historico.findAllByEntidadeAndIdEntidade(params.modelo, params.idEntidade.toLong(), [max:max, offset:offset, sort:"dataOperacao", order:"desc"])
+		
+		DateFormat format = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
+		
+		def retorno = historicos.collect { hist ->
+			[usuario:"", tipoOperacao:"${hist.tipoOperacao.toString()}", dataOperacao:"${format.format(hist.dataOperacao)}"]
+		}
+		
+		def resposta = [page:"${params.page}", total:"${total}", records:historicos.size(), rows:retorno].encodeAsJSON()
+		
+		render resposta
+		
+	}
 	
 	def list(){
 		def classe =grailsApplication.classLoader.loadClass(params.modelo)
