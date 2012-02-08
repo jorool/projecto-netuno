@@ -1,6 +1,6 @@
 #summary Guia de releases.
 
-= Versões =
+= Releases =
 
 ----
 
