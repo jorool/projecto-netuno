@@ -1,7 +1,7 @@
 #summary Guia de releases.
 #labels Featured
 
-= Versão 0.1a =
+= Versão 0.1b =
 
 === Observações ===
 Primeira release para teste no cliente.
