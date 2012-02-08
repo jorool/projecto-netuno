@@ -11,7 +11,6 @@ class JqgridController {
     def index() { }
 	
 	def historico(){
-		println params
 		
 		def max = Integer.parseInt(params.rows)
 		
@@ -26,12 +25,27 @@ class JqgridController {
 		DateFormat format = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
 		
 		def retorno = historicos.collect { hist ->
-			[usuario:"", tipoOperacao:"${hist.tipoOperacao.toString()}", dataOperacao:"${format.format(hist.dataOperacao)}"]
+			[id:hist.id, usuario:"", tipoOperacao:"${hist.tipoOperacao.toString()}", dataOperacao:"${format.format(hist.dataOperacao)}"]
 		}
 		
 		def resposta = [page:"${params.page}", total:"${total}", records:historicos.size(), rows:retorno].encodeAsJSON()
 		
 		render resposta
+		
+	}
+	
+	def historicoDetalhe(){
+		
+		def historico = Historico.get(params.id.toLong())
+		
+		def retorno = historico.detalhes.collect{ det ->
+			[cell:[det.campo, det.valorAnterior, det.valorNovo]]
+		}
+		
+		def resposta = [rows:retorno].encodeAsJSON()
+		
+		render resposta 
+		
 		
 	}
 	
