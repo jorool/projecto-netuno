@@ -26,7 +26,11 @@
 			      records: "records",
 			      repeatitems: false,
 			      id: "id"
-			   }
+			   },
+			  subGrid:true,
+			  subGridUrl: '${g.createLink(controller:'jqgrid', action:'historicoDetalhe')}',
+			  subGridModel: [{ name : ['Campo', 'Valor Anterior', 'Valor Novo'],
+				  				width: [200, 200, 200]}]
 			});
 		
 		});
