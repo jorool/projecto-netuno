@@ -1,16 +1,30 @@
 #summary Guia de releases.
+#labels Featured
 
-= Releases =
-
-----
-
-== 0.1a ==
+= Versão 0.1a =
 
 === Observações ===
-Primeiro release de desenvolvimento.
+Primeira release para teste no cliente.
 
 === Data da release ===
 20/02/2012
+
+=== Issues/funcionalidades da release ===
+ * Cadastro de cidade
+ * Cadastro de estado
+ * Cadastro de país
+ * Cadastro de cliente/fornecedor
+ * Histórico de alterações de cadastro
+
+----
+
+= Versão 0.2b =
+
+=== Observações ===
+Segunda release para teste no cliente.
+
+=== Data da release ===
+05/03/2012
 
 === Issues/funcionalidades da release ===
  * Cadastro de cidade
