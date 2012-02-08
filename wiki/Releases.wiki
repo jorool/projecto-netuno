@@ -14,6 +14,10 @@ Primeira release para teste no cliente.
  * Cadastro de estado
  * Cadastro de país
  * Cadastro de cliente/fornecedor
+ * Cadastro de produto
+ * Cadastro de tipo de produto
+ * Cadastro de tipo de movimento
+ * Movimentos de estoque
  * Histórico de alterações de cadastro
 
 ----
@@ -27,10 +31,5 @@ Segunda release para teste no cliente.
 05/03/2012
 
 === Issues/funcionalidades da release ===
- * Cadastro de cidade
- * Cadastro de estado
- * Cadastro de país
- * Cadastro de cliente/fornecedor
- * Histórico de alterações de cadastro
-
+?
 ----
