@@ -1,7 +1,10 @@
 package solar.interceptor
 
+import netuno.administracao.Usuario;
+
 import org.hibernate.EmptyInterceptor
 import org.hibernate.type.Type
+import org.springframework.security.core.context.SecurityContextHolder
 
 import solar.historico.DetalheHistorico;
 import solar.historico.Historico;
@@ -36,9 +39,13 @@ class SolarHibernateInterceptor extends EmptyInterceptor{
 	boolean onFlushDirty(Object entity, Serializable id, Object[] currentState, Object[] previousState, String[] propertyNames, Type[] types) {
 
 
+		def auth = SecurityContextHolder.context.authentication;
+		
+		Usuario user = Usuario.findByUsername(auth.name)
+		
 
 		Historico historico = new Historico(entidade:entity.class.simpleName, dataOperacao:new Date(),
-				tipoOperacao:TipoOperacao.ALTERADO, idEntidade:(Long)id)
+				tipoOperacao:TipoOperacao.ALTERADO, idEntidade:(Long)id, usuario:user)
 		historico.save()
 
 		propertyNames.eachWithIndex {name, index ->
@@ -74,9 +81,13 @@ class SolarHibernateInterceptor extends EmptyInterceptor{
 	}
 
 	void onDelete( Object entity, Serializable id, Object[] state, String[] propertyNames, Type[] types) {
+		
+		def auth = SecurityContextHolder.context.authentication;
+		
+		Usuario user = Usuario.findByUsername(auth.name)
 
 		Historico historico = new Historico(entidade:entity.class.simpleName, dataOperacao:new Date(),
-				tipoOperacao:TipoOperacao.EXCLUIDO, idEntidade:(Long)id)
+				tipoOperacao:TipoOperacao.EXCLUIDO, idEntidade:(Long)id, usuario:user)
 		historico.save()
 
 		propertyNames.eachWithIndex {name, index ->

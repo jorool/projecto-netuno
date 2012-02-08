@@ -1,7 +1,10 @@
 package solar.interceptor
 
+import netuno.administracao.Usuario
+
 import org.codehaus.groovy.grails.orm.hibernate.support.ClosureEventTriggeringInterceptor;
 import org.hibernate.event.PostInsertEvent
+import org.springframework.security.core.context.SecurityContextHolder
 
 import solar.historico.DetalheHistorico
 import solar.historico.Historico
@@ -35,8 +38,12 @@ class SolarGlobalEventTriggering extends ClosureEventTriggeringInterceptor{
 			return;
 		}
 		
+		def auth = SecurityContextHolder.context.authentication;
+		
+		Usuario user = Usuario.findByUsername(auth.name)
+		
 		Historico historico = new Historico(entidade:entity.class.simpleName, dataOperacao:new Date(), 
-											tipoOperacao: TipoOperacao.SALVO, idEntidade:(Long)event.id)
+											tipoOperacao: TipoOperacao.SALVO, idEntidade:(Long)event.id, usuario:user)
 		historico.save()
 		
 		super.onPostInsert(event);
