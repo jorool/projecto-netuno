@@ -2,6 +2,7 @@ package solar
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import solar.historico.Historico
 
@@ -25,7 +26,7 @@ class JqgridController {
 		DateFormat format = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
 		
 		def retorno = historicos.collect { hist ->
-			[id:hist.id, usuario:"", tipoOperacao:"${hist.tipoOperacao.toString()}", dataOperacao:"${format.format(hist.dataOperacao)}"]
+			[id:hist.id, usuario:hist.usuario?.username, tipoOperacao:"${hist.tipoOperacao.toString()}", dataOperacao:"${format.format(hist.dataOperacao)}"]
 		}
 		
 		def resposta = [page:"${params.page}", total:"${total}", records:historicos.size(), rows:retorno].encodeAsJSON()
