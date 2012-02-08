@@ -10,6 +10,7 @@ class Endereco {
 	String cep
 	
 	static belongsTo = [pessoa:Pessoa, cidade:Cidade, tipoEndereco:TipoEndereco]
+	
 
 	String toString() {
 		this.endereco + ", " + bairro + " nº " + numero

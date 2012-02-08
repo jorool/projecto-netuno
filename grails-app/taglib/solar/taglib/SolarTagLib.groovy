@@ -227,5 +227,26 @@ class SolarTagLib {
 	 
 	 out << render (template:"/solarTagLib/mensagens");
  }
+ 
+ /**
+  * Mostra o historico de um registro
+  * 
+  * @attr idEntidade REQUIRED id do registro que ira buscar o historico
+  * @attr modelo REQUIRED classe domain para buscar historico (ex. Pais)
+  * 
+  */
+ def historico = {attrs ->
+	 
+	 if(!attrs.idEntidade){
+		 throwTagError("O atributo idEntidade da tag historico é obrigatório")
+	 }
+	 
+	 if(!attrs.modelo){
+		 throwTagError("O atributo modelo da tag historico é obrigatório")
+	 }
+	 
+	 out << render (template:"/solarTagLib/historico", model:[attrs:attrs])
+	 
+ }
 	
 }

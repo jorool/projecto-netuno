@@ -19,4 +19,10 @@
 	<input type="hidden" name="id" value="${instance?.id}" />
 
 	<sol:toolBarSalvar idForm="formPais" controller="pais" />
+	
+	<g:if test="${instance?.id}">
+		<h3 class="ui-state-default">Histórico</h3>
+		
+		<sol:historico modelo="Pais" idEntidade="${instance?.id}"/>		
+	</g:if>
 </form>

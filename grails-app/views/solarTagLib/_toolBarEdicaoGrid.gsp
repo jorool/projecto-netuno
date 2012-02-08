@@ -27,7 +27,7 @@
 				var ev = eval('(' + data + ')');
 				if(ev.success){
 					mostraMensagemInfo("${attrs.idGrid}_erro", ev.msg);
-					$("#${attrs.idGrid}").trigge	r("reloadGrid");
+					$("#${attrs.idGrid}").trigger("reloadGrid");
 				}else{
 					mostraMensagemErro("${attrs.idGrid}_erro", ev.msg);
 				}
