@@ -51,9 +51,11 @@ html,body {
 	height: 15px;
 	background-color: #3F3F3F;
 	border-top: 1px solid black;
-	font-size: 0.65em;
+	font-size: 10px;
+	font-family: inherit;
 	color: rgb(200, 200, 200);
 	padding: 0.5em 2em;
+	text-align: center;
 }
 
 .east {
@@ -153,14 +155,4 @@ a {
 	height: 120px;
 	float: left;
 	margin: 15px;
-}
-
-#progressbar {
-	font-size: 0.6em;
-	margin: 1em;
-}
-
-#datepicker {
-	margin: 0.5em;
-	font-size: 0.78em;
 }

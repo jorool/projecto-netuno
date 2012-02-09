@@ -8,15 +8,15 @@
 
 <r:layoutResources />
 
-<g:javascript src="jquery-ui-1.8.17.custom.min.js" />
+<g:javascript src="jquery/jquery-ui-1.8.17.custom.min.js" />
 <g:javascript src="tab.js" />
 <g:javascript src="jLayout/jlayout.border.min.js" />
 <g:javascript src="jLayout/jlayout.flexgrid.min.js" />
 <g:javascript src="jLayout/jlayout.flow.min.js" />
 <g:javascript src="jLayout/jlayout.grid.min.js" />
-<g:javascript src="jquery.jlayout.min.js" />
-<g:javascript src="jquery.sizes.min.js" />
-<g:javascript src="jquery.metadata.js" />
+<g:javascript src="jquery/jquery.jlayout.min.js" />
+<g:javascript src="jquery/jquery.sizes.min.js" />
+<g:javascript src="jquery/jquery.metadata.js" />
 
 <link rel="stylesheet"
 	href="${resource(dir: 'css', file: 'jquery-ui-1.8.17.custom.css')}" type="text/css" />
@@ -37,27 +37,8 @@
 		function layout() {
 			container.layout();
 			$('#accordion').accordion('resize');
-	
-			// This ensures that the center is never smaller than 400 pixels.
-			east.resizable('option', 'maxWidth', (center.width() + east.width()) - 400);
-			west.resizable('option', 'maxWidth', (center.width() + west.width()) - 400);
 		}
 	
-		// Make the west and east panels resizable
-		west.resizable({
-			handles: 'e',
-			stop: layout,
-			helper: 'ui-resizable-helper-west',
-			minWidth: 200
-		});
-	
-		east.resizable({
-			handles: 'w',
-			stop: layout,
-			helper: 'ui-resizable-helper-east',
-			minWidth: 200
-		});
-		
 		// Lay out the west panel first
 		west.layout();
 		
@@ -90,19 +71,8 @@
 			});
 		});				
 	
-		$("#progressbar").progressbar({
-			value: 59
-		});
-	
-		$('#datepicker').datepicker();
 	});
 
-
-<%--				$(function(){--%>
-<%--					var wDoc = $(document).width();--%>
-<%--					var wAux = $("#auxiliar").width();--%>
-<%--					$("#principal").width(wDoc - wAux - 20);--%>
-<%--				});--%>
 </script>
 
 </head>
@@ -114,22 +84,22 @@
 			<ul>
 			</ul>
 		</div>
-		<div class="east">
-			<div class="panel">
-				<div class="ui-state-default" style="padding:4px;">Panel 1</div>
-				qq coisa
-			</div>
-			<div class="panel">
-				<div class="ui-state-default" style="padding:4px;">Panel 2</div>
-				qq coisa
-			</div>
-		</div>
+<%--		<div class="east">--%>
+<%--			<div class="panel">--%>
+<%--				<div class="ui-state-default" style="padding:4px;">Panel 1</div>--%>
+<%--				qq coisa--%>
+<%--			</div>--%>
+<%--			<div class="panel">--%>
+<%--				<div class="ui-state-default" style="padding:4px;">Panel 2</div>--%>
+<%--				qq coisa--%>
+<%--			</div>--%>
+<%--		</div>--%>
 		<div class="west {layout: {type: 'grid', columns: 1, resize: false}}">
 			<div id="accordion">
 				<g:render template="menu" contextPath="/" />
 			</div>
 		</div>
-		<div class="south">roda o pé</div>
+		<div class="south">21/12/2012 - Todos os direitos reservados.</div>
 	</body>
 
 </html>

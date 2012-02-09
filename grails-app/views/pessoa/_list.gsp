@@ -1,4 +1,6 @@
-<h2 class="ui-state-default">Listagem de Cliente/Fornecedor</h2>
+<h3 class="ui-state-default">Listagem de Cliente/Fornecedor</h3>
+
+<%--<hr class="ui-state-default" />--%>
 
 <sol:toolBarEdicaoGrid controller="pessoa" idGrid="gridPessoa" />
 
