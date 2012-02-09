@@ -1,15 +1,13 @@
 <%@ page import="netuno.administracao.Pais" %>
 
-<h2 class="ui-state-default">Cadastro de país</h2>
+<h3 class="ui-state-default">Cadastro de país</h3>
 
 <sol:mensagens />
 
 <form id="formPais">
-
-
-	<div class="fm-req">
+	<div>
 		<label for="txtCodigoIbge">Código IBGE</label> 
-		<input name="codigoIBGE" id="txtCodigoIbge" type="text" class="required" value="${instance?.codigoIBGE}"/>
+		<input name="codigoIBGE" id="txtCodigoIbge" type="text" value="${instance?.codigoIBGE}"/>
 	</div>
 	<div class="fm-req">
 		<label for="txtNome">Nome</label> 
@@ -21,7 +19,7 @@
 	<sol:toolBarSalvar idForm="formPais" controller="pais" />
 	
 	<g:if test="${instance?.id}">
-		<h3 class="ui-state-default">Histórico</h3>
+		<h4 class="ui-state-default">Histórico</h4>
 		
 		<sol:historico modelo="Pais" idEntidade="${instance?.id}"/>		
 	</g:if>

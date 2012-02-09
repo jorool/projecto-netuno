@@ -31,7 +31,7 @@
 
 <g:javascript src="jgrid/grid.locale-pt-br.js" />
 <g:javascript src="jgrid/jquery.jqGrid.min.js" />
-<g:javascript src="jquery-ui-1.8.17.custom.min.js" />
+<g:javascript src="jquery/jquery-ui-1.8.17.custom.min.js" />
 <g:javascript src="mensagens.js" />
 <g:javascript src="ajax.js" />
 <g:javascript src="validator/jquery.validate.min.js" />

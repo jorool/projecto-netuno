@@ -2,7 +2,7 @@ package solar.historico;
 
 public enum TipoOperacao {
 	
-	SALVO("Salvo"), ALTERADO("Alterado"), EXCLUIDO("Excluido");
+	SALVO("Criado"), ALTERADO("Alterado"), EXCLUIDO("Excluído");
 	
 	private String nome;
 	
