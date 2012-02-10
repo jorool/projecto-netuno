@@ -1,6 +1,6 @@
 <%@ page import="netuno.administracao.Cidade" %>
 
-<h2 class="ui-state-default">Cadastro de cidade</h2>
+<h3 class="ui-state-default">Cadastro de cidade</h3>
 
 <sol:mensagens />
 
@@ -13,7 +13,7 @@
 	
 	<div class="fm-req">
 		<label for="txtEstado">Estado</label>
-		<sol:autocomplete controller="estado" id="txtEstado" name="estado.id" classeCss="required" searchField="nome"/> 
+		<sol:autocomplete controller="estado" id="txtEstado" name="estado.id" classeCss="required" searchField="nome" value="${instance?.estado}"/> 
 	</div>
 	
 	<div>
@@ -24,4 +24,8 @@
 	<input type="hidden" name="id" value="${instance?.id}" />
 
 	<sol:toolBarSalvar idForm="formCidade" controller="cidade" />
+	
+	<g:if test="${instance?.id}">
+		<sol:historico modelo="Cidade" idEntidade="${instance?.id}"/>		
+	</g:if>
 </form>

@@ -158,6 +158,7 @@ class SolarTagLib {
 	 * @attr controller REQUIRED controller para realizar a busca para preencher o autocomplete
 	 * @attr action DEFAULT "autocomplete" qual a ação do controller sera realizada
 	 * @attr searchField REQUIRED nome do campo que ira ser realizado a pesquisa
+	 * @attr value 
 	 * @attr name 
 	 * @attr classeCss Classe css do componente
 	 * @attr style estilo css do componente

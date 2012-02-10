@@ -24,5 +24,5 @@
 </script>
 
 
-<input type="hidden" name="${attrs.name}" id="${attrs.id}_hidden" />
-<input id="${attrs.id}" style="${attrs.style}" class="${attrs.classeCss}" />
+<input type="hidden" name="${attrs.name}" id="${attrs.id}_hidden" value="${attrs.value?.id}"/>
+<input id="${attrs.id}" style="${attrs.style}" class="${attrs.classeCss}" value='${attrs.value?."${attrs.searchField}"}'/>

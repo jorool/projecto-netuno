@@ -1,4 +1,4 @@
-<h2 class="ui-state-default">Listagem de Tipo de movimento</h2>
+<h3 class="ui-state-default">Listagem de Tipo de movimento</h3>
 
 <sol:toolBarEdicaoGrid controller="tipoMovimento" idGrid="gridTipoMovimento" />
 

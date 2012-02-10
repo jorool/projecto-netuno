@@ -18,10 +18,10 @@
 	
 	<div class="fm-req">
 		<label for="txtPais">País</label>
-		<sol:autocomplete controller="pais" id="txtPais" name="pais.id" classeCss="required" searchField="nome"/> 
+		<sol:autocomplete controller="pais" id="txtPais" name="pais.id" classeCss="required" searchField="nome" value="${instance?.pais}"/> 
 	</div>
 
-	<div class="fm-req">
+	<div>
 		<label for="txtCodigoIbge">Código IBGE</label> 
 		<input name="codigoIBGE" id="txtCodigoIbge" type="text" value="${instance?.codigoIBGE}"/>
 	</div>

@@ -1,4 +1,4 @@
-<h2 class="ui-state-default">Listagem de Estado</h2>
+<h3 class="ui-state-default">Listagem de Estado</h3>
 
 <sol:toolBarEdicaoGrid controller="estado" idGrid="gridEstado" />
 

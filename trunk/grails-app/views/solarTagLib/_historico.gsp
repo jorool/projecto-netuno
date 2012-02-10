@@ -36,6 +36,6 @@
 		});
 </script>
 
-
+<h4 class="ui-state-default">Histórico</h4>
 <table id="listHistorico"></table>
 <div id="pageHistorico"></div>
