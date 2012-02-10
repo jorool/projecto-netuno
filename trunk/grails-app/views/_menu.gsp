@@ -13,6 +13,7 @@
 		<a href="#" onclick="criarTab('cidade/', 'Cidade'); return false;">Cidade</a><br>
 		<a href="#" onclick="criarTab('estado/', 'Estado'); return false;">Estado</a><br>
 		<a href="#" onclick="criarTab('pais/', 'País'); return false;">País</a><br>
+		<a href="#" onclick="criarTab('usuario/', 'Usuário'); return false;">Usuário</a><br>
 	</div>
 	
 	<h3><a href="#">Estoque</a></h3>

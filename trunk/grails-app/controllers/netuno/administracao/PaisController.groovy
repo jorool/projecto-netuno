@@ -17,6 +17,4 @@ class PaisController extends SolarBaseController{
 		Pais.get(id)
 	}
 	
-
-	
 }
