@@ -1,7 +1,7 @@
 <%@page import="netuno.estoque.EntradaSaida"%>
 <%@page import="netuno.estoque.TipoMovimento" %>
 
-<h2 class="ui-state-default">Cadastro de tipo de movimento</h2>
+<h3 class="ui-state-default">Cadastro de tipo de movimento</h3>
 
 <sol:mensagens />
 
