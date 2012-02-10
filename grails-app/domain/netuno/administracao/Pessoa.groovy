@@ -4,7 +4,6 @@ import netuno.administracao.TipoPessoa;
 
 class Pessoa {
 
-	Integer codigo
 	String nome
 	String telefone
 	String celular
@@ -19,7 +18,6 @@ class Pessoa {
 	}
 		
     static constraints = {
-		codigo nullable: false, unique:true
 		nome nullable: false, blank: false
     }
 }

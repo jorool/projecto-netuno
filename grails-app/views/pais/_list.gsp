@@ -1,4 +1,4 @@
-<h2 class="ui-state-default">Listagem de país</h2>
+<h3 class="ui-state-default">Listagem de país</h3>
 
 <sol:toolBarEdicaoGrid controller="pais" idGrid="gridPais" />
 

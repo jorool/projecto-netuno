@@ -1,4 +1,4 @@
-<h2 class="ui-state-default">Listagem de Produto</h2>
+<h3 class="ui-state-default">Listagem de Produto</h3>
 
 <sol:toolBarEdicaoGrid controller="produto" idGrid="gridProduto" />
 

@@ -43,8 +43,9 @@ html,body {
 
 .north {
 	height: 25px;
-/* 	background-color: #3F3F3F; */
+	line-height: 25px;
 	border-bottom: 1px solid black;
+	padding-left: 5px;
 }
 
 .south {

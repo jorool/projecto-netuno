@@ -79,6 +79,12 @@
 
 <body class="{layout: {type: 'border', resize: false, hgap: 6}}">
 		<div class="north">
+			<sec:ifNotLoggedIn>
+				<g:link controller="login" action="auth">Logar</g:link>
+			</sec:ifNotLoggedIn>
+			<sec:ifLoggedIn>
+				Usuário: <sec:username /> (<g:link controller="logout">logout</g:link>)
+			</sec:ifLoggedIn>
 		</div>
 		<div id="tabs" class="center">
 			<ul>
