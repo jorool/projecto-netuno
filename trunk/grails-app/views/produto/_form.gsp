@@ -1,8 +1,18 @@
 <%@page import="netuno.estoque.Produto" %>
 
-<h2 class="ui-state-default">Cadastro de produto</h2>
+<g:javascript src="jquery/jquery.price_format.1.6.min.js" />
+
+<h3 class="ui-state-default">Cadastro de Produto</h3>
 
 <sol:mensagens bean="${instance}" />
+
+<script type="text/javascript">
+	$('#txtValorUnitario').priceFormat({
+		prefix: 'R$ ',
+		centsSeparator: ',',
+		thousandsSeparator: '.'
+	});
+</script>
 
 <form id="formProduto">
 
@@ -39,4 +49,8 @@
 	<input type="hidden" name="id" value="${instance?.id}" />
 
 	<sol:toolBarSalvar idForm="formProduto" controller="produto" />
+	
+	<g:if test="${instance?.id}">
+		<sol:historico modelo="Produto" idEntidade="${instance?.id}"/>		
+	</g:if>
 </form>
