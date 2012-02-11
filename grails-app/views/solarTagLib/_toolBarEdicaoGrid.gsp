@@ -1,5 +1,3 @@
-
-
 <script type="text/javascript">
 			function editar(){
 				var id = $("#${attrs.idGrid}").jqGrid('getGridParam', 'selrow');
@@ -36,8 +34,9 @@
 
 </script>
 
-<%--<sol: label for="txtPesquisa">Pesquisar por</label>--%>
-<sol:button id="${attrs.idGrid}_btnPesquisar" icon="ui-icon-pesquisar">Pesquisar</sol:button>
+<label for="txtPesquisa" style="line-height: 24px; text-align: left; width: 95px; padding-right: 0px">Pesquisar por</label>
+<input type="text" style="width: 130px" />
+<%--<sol:button id="${attrs.idGrid}_btnPesquisar" icon="ui-icon-pesquisar">Pesquisar</sol:button>--%>
 <sol:button id="${attrs.idGrid}_btnCreate" controller="${attrs.controller}" action="create" icon="ui-icon-novo" ajax="true" method="GET" onAjaxSuccess="mudaPagina">Novo</sol:button>
 <sol:button id="${attrs.idGrid}_btnEditar" onclick="editar()" controller="${attrs.controller}" action="edit" icon="ui-icon-editar" ajax="true" method="GET" onAjaxSuccess="mudaPagina">Editar</sol:button>
 <sol:button id="${attrs.idGrid}_btnExcluir" onclick="excluir()" ajax="true" method="POST" 

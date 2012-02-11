@@ -23,17 +23,17 @@
 	
 	<div class="fm-req">
 		<label for="cbTipoProduto">Tipo</label>
-		<sol:autocomplete controller="tipoProduto" id="txtTipoProduto" name="tipoProduto.id" classeCss="required" searchField="nome"/>
+		<sol:autocomplete controller="tipoProduto" id="txtTipoProduto" name="tipoProduto.id" classeCss="required" searchField="nome" value="${instance?.tipoProduto}"/>
 	</div>
 	
-	<div>
+	<div class="fm-req">
 		<label for="txtValorUnitario">Valor unitário</label> 
-		<input name="valorUnitario" id="txtValorUnitario" type="text" value="${instance?.valorUnitario}"/>
+		<input name="valorUnitario" id="txtValorUnitario" type="text" value="${instance?.valorUnitario}" class="required"/>
 	</div>
 
-	<div>
+	<div class="fm-req">
 		<label for="txtSaldoEstoqueFisico">Saldo de estoque físico</label> 
-		<input name="saldoEstoqueFisico" id="txtSaldoEstoqueFisico" type="text" value="${instance?.saldoEstoqueFisico}" />
+		<input name="saldoEstoqueFisico" id="txtSaldoEstoqueFisico" type="text" value="${instance?.saldoEstoqueFisico}" class="required" />
 	</div>
 	
 	<input type="hidden" name="id" value="${instance?.id}" />
