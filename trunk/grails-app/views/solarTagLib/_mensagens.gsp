@@ -21,9 +21,9 @@
 	    <g:eachError bean="${attrs.bean}">
 	    <script type="text/javascript">
 					$(function(){
-						mostraMensagemErro("msgs", "${it.defaultMessage}");
+						mostraMensagemErro("msgs", '<g:message error="${it}" />' );
 					});
-				</script>
+				</script> 
 	    </g:eachError>
 	</g:hasErrors> 
 </g:if>
