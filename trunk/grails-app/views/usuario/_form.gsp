@@ -18,7 +18,7 @@
 	
 	<div>
 		<label for="ckAtivo">Ativo</label>
-		<g:checkBox name="ckAtivo" value="${instance?.enabled}"/>
+		<g:checkBox id="ckAtivo" name="enabled" value="${instance?.enabled}"/>
 	</div>
 	
 	<input type="hidden" name="id" value="${instance?.id}" />
