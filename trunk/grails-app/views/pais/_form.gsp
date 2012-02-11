@@ -2,8 +2,10 @@
 
 <h3 class="ui-state-default">Cadastro de país</h3>
 
-<sol:mensagens />
+<sol:mensagens bean="${instance}" />
 
+
+				
 <form id="formPais">
 	<div>
 		<label for="txtCodigoIbge">Código IBGE</label> 

@@ -40,11 +40,13 @@ class SolarGlobalEventTriggering extends ClosureEventTriggeringInterceptor{
 		
 		def auth = SecurityContextHolder.context.authentication;
 		
-		Usuario user = Usuario.findByUsername(auth.name)
-		
-		Historico historico = new Historico(entidade:entity.class.simpleName, dataOperacao:new Date(), 
-											tipoOperacao: TipoOperacao.SALVO, idEntidade:(Long)event.id, usuario:user)
-		historico.save()
+		if(auth != null){
+			Usuario user = Usuario.findByUsername(auth.name)
+			
+			Historico historico = new Historico(entidade:entity.class.simpleName, dataOperacao:new Date(), 
+												tipoOperacao: TipoOperacao.SALVO, idEntidade:(Long)event.id, usuario:user)
+			historico.save()
+		}
 		
 		super.onPostInsert(event);
 		

@@ -2,7 +2,7 @@
 
 <h2 class="ui-state-default">Cadastro de estado</h2>
 
-<sol:mensagens />
+<sol:mensagens bean="${instance}" />
 
 <form id="formEstado">
 

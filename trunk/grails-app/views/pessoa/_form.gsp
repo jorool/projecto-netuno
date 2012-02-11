@@ -12,7 +12,7 @@
 
 <h3 class="ui-state-default">Cadastro de Cliente/Fornecedor</h3>
 
-<sol:mensagens />
+<sol:mensagens bean="${instance}" />
 
 <form id="formPessoa">
 
