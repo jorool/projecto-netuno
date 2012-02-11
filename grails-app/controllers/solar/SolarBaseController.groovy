@@ -31,30 +31,31 @@ class SolarBaseController {
 		
 		def instance = novaInstancia(params)
 		
+		
+		
 		if (!instance.save(flush: true)) {
-			flash.mensagemErro = "Erro ao salvar pais"
-			render(template: "form", model: [paisInstance: instance])
+			render(template: "form", model: [instance: instance])
 			return
 		}
 
-		flash.mensagemInfo = message(code: 'default.created.message', args: [message(code: 'pais.label', default: 'Pais'), instance.id])
+		flash.mensagemInfo = message(code: 'default.created.message', args:[message(code: "${this.entityName}.label", default: 'Registro'), instance.id])
 		redirect(action: "list")
 	}
 	
 	protected def atualizarObjeto() {
 		def instance = obterInstancia(params.id.toLong())
 		if (!instance) {
-			flash.mensagemErro = message(code: 'default.not.found.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
+			flash.mensagemErro = message(code: 'default.not.found.message', args: [message(code: "${this.entityName}.label", default: 'Registro'), params.id])
 			redirect(action: "list")
 			return
 		}
 
 		if (params.version) {
 			def version = params.version.toLong()
-			if (instance.version > version) {
+			if (instance.version > version) { 
 				instance.errors.rejectValue("version", "default.optimistic.locking.failure",
-						  [message(code: 'pais.label', default: 'Pais')] as Object[],
-						  "Another user has updated this Pais while you were editing")
+						  [message(code: "${this.entityName}.label", default: 'Registro')] as Object[],
+						  "Another user has updated this Register while you were editing")
 				render(template: "form", model: [instance: instance])
 				return
 			}
@@ -64,11 +65,11 @@ class SolarBaseController {
 		instance.properties = params
 
 		if (!instance.save(flush: true)) {
-			render(template: "form", model: [paisInstance: instance])
+			render(template: "form", model: [instance: instance])
 			return
 		}
 
-		flash.mensagemInfo = message(code: 'default.updated.message', args: [message(code: 'pais.label', default: 'Pais'), instance.id])
+		flash.mensagemInfo = message(code: 'default.updated.message', args: [message(code: "${this.entityName}.label", default: 'Registro'), instance.id])
 		redirect(action: "list")
 	}
 
@@ -90,7 +91,7 @@ class SolarBaseController {
         //def paisInstance = Pais.get(params.id.toLong())
 		def instance = obterInstancia(params.id.toLong())
         if (!instance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: "${this.entityName}.label", default: 'Registro'), params.id])
             redirect(action: "list")
             return
         }
@@ -105,17 +106,17 @@ class SolarBaseController {
 		
         def instance = obterInstancia(params.id.toLong())
         if (!instance) {
-			retorno.msg =  message(code: 'default.not.found.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
+			retorno.msg =  message(code: 'default.not.found.message', args: [message(code: "${this.entityName}.label", default: 'Registro'), params.id])
             retorno.success = false;
             
         }else{
 	        try {
 	            instance.delete(flush: true)
-				retorno.msg = message(code: 'default.deleted.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
+				retorno.msg = message(code: 'default.deleted.message', args: [message(code: "${this.entityName}.label", default: 'Registro'), params.id])
 	            
 	        }
 	        catch (DataIntegrityViolationException e) {
-				retorno.msg = message(code: 'default.not.deleted.message', args: [message(code: 'pais.label', default: 'Pais'), params.id])
+				retorno.msg = message(code: 'default.not.deleted.message', args: [message(code: "${this.entityName}.label", default: 'Registro'), params.id])
 				retorno.success = false;
 	            
 	        }
@@ -131,6 +132,12 @@ class SolarBaseController {
 		
 		grailsApplication.classLoader.loadClass(classe)
 		
+	}
+	
+	public String getEntityName(){
+		Class domainClass = getClassEntity()
+		
+		domainClass.simpleName.toLowerCase()
 	}
 	
 	def autocomplete(){

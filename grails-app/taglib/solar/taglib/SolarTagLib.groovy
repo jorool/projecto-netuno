@@ -223,10 +223,11 @@ class SolarTagLib {
  
  /**
   * Pega as mensagens (mensagemErro e mensagemInfo) do flash e exibe para o usuario
+  * @attr bean Instancia para verificiar se existem erros de validações
   */
  def mensagens = {attrs ->
 	 
-	 out << render (template:"/solarTagLib/mensagens");
+	 out << render (template:"/solarTagLib/mensagens", model:[attrs:attrs]);
  }
  
  /**
