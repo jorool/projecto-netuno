@@ -29,7 +29,8 @@ class UsuarioPerfilUsuario implements Serializable {
 	}
 
 	static UsuarioPerfilUsuario create(Usuario usuario, PerfilUsuario perfilUsuario, boolean flush = false) {
-		new UsuarioPerfilUsuario(usuario: usuario, perfilUsuario: perfilUsuario).save(flush: flush, insert: true)
+		def userProfile = new UsuarioPerfilUsuario(usuario: usuario, perfilUsuario: perfilUsuario)
+		userProfile.save(flush: flush, insert: true)
 	}
 
 	static boolean remove(Usuario usuario, PerfilUsuario perfilUsuario, boolean flush = false) {
@@ -38,7 +39,7 @@ class UsuarioPerfilUsuario implements Serializable {
 			return false
 		}
 
-		instance.delete(flush: flush)
+		instance.delete(flush: flush) 
 		true
 	}
 

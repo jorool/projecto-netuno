@@ -5,6 +5,8 @@ import solar.SolarBaseController;
 import netuno.estoque.Produto;
 
 class ProdutoController extends SolarBaseController {
+	
+	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
 	def novaInstancia(atributos){
 		new Produto(atributos)

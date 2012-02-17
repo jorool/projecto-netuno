@@ -1,8 +1,5 @@
 package solar
 
-import grails.plugins.springsecurity.Secured;
-import netuno.administracao.Pais
-
 import org.springframework.dao.DataIntegrityViolationException
 
 class SolarBaseController {
@@ -18,7 +15,6 @@ class SolarBaseController {
 	def index(){
 	}
 	
-	@Secured(['ROLE_USER'])
 	def list(){
 		render(template: "list")
 	}
@@ -28,16 +24,11 @@ class SolarBaseController {
     }
 
 	protected def salvarObjeto() {
-		
 		def instance = novaInstancia(params)
-		
-		
-		
 		if (!instance.save(flush: true)) {
 			render(template: "form", model: [instance: instance])
 			return
 		}
-
 		flash.mensagemInfo = message(code: 'default.created.message', args:[message(code: "${this.entityName}.label", default: 'Registro'), instance.id])
 		redirect(action: "list")
 	}
@@ -124,7 +115,6 @@ class SolarBaseController {
 		
 		render retorno.encodeAsJSON();
     }
-	
 	
 	private Class getClassEntity(){
 		String classe = getClass().name

@@ -83,7 +83,7 @@
 				<g:link controller="login" action="auth">Logar</g:link>
 			</sec:ifNotLoggedIn>
 			<sec:ifLoggedIn>
-				Usuário: <sec:username /> (<g:link controller="logout">logout</g:link>)
+				Usuário: <sec:username /> - <g:link controller="logout">logout</g:link>
 			</sec:ifLoggedIn>
 		</div>
 		<div id="tabs" class="center">
