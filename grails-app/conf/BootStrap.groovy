@@ -14,8 +14,8 @@ class BootStrap {
 		
 		def SpringSecurityService
 		
-		def perfilUsuario = PerfilUsuario.findByAuthority("ROLE_USER") ?: new PerfilUsuario(authority:"ROLE_USER").save()
-		def perfilAdministrador = PerfilUsuario.findByAuthority("ROLE_ADMIN") ?: new PerfilUsuario(authority:"ROLE_ADMIN").save()
+		def perfilUsuario = PerfilUsuario.findByAuthority("ROLE_USER") ?: new PerfilUsuario(authority:"ROLE_USER", descricao:"Usuário").save()
+		def perfilAdministrador = PerfilUsuario.findByAuthority("ROLE_ADMIN") ?: new PerfilUsuario(authority:"ROLE_ADMIN", descricao:"Administrador").save()
 		
 		def usuarios = Usuario.list() ?: []
 		if (!usuarios) {

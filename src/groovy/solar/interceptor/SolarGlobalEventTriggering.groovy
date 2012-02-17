@@ -1,6 +1,7 @@
 package solar.interceptor
 
 import netuno.administracao.Usuario
+import netuno.administracao.UsuarioPerfilUsuario;
 
 import org.codehaus.groovy.grails.orm.hibernate.support.ClosureEventTriggeringInterceptor;
 import org.hibernate.event.PostInsertEvent
@@ -32,9 +33,7 @@ class SolarGlobalEventTriggering extends ClosureEventTriggeringInterceptor{
 		
 		def entity = event.entity
 		
-		
-		
-		if((entity instanceof Historico) || (entity instanceof DetalheHistorico)){
+		if((entity instanceof Historico) || (entity instanceof DetalheHistorico) || (entity instanceof UsuarioPerfilUsuario)){
 			return;
 		}
 		
