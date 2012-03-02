@@ -60,7 +60,6 @@ form {
 /*-----Signin link-----*/
 
 .signin {
-	background: url(../images/arrow.gif) no-repeat right #fff;
 	padding:10px 25px 10px 10px;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size:14px;
@@ -73,14 +72,12 @@ form {
 	border-radius: .3em;
 }
 .signin:hover {
-	background: url(../images/arrow.hover.gif) no-repeat right #b5ccde;
 	color:#fff;
 }
 
 /*-----Signin clicked state-----*/
 
 .signinclick {
-	background: url(../images/arrow.clicked.gif) no-repeat right #d7e5ee;
 	padding:10px 25px 10px 10px;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size:14px;
@@ -201,7 +198,6 @@ label {
 .tooltip:hover span {
 	display:inline;
 	position:absolute;
-	background: url(../images/tip.gif) no-repeat left #333;
 	color:#fff;
 	padding:6px 8px 6px 20px;
 	font-size:12px;
