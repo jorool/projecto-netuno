@@ -18,6 +18,7 @@
 	
 	<h3><a href="#">Estoque</a></h3>
 	<div>
+		<a href="#" onclick="criarTab('movimento/', 'Movimento'); return false;">Movimento</a><br>
 		<a href="#" onclick="criarTab('produto/', 'Produto'); return false;">Produto</a><br>
 		<a href="#" onclick="criarTab('tipoProduto/', 'Tipo de produto'); return false;">Tipo de produto</a><br>
 		<a href="#" onclick="criarTab('tipoMovimento/', 'Tipo de movimento'); return false;">Tipo de movimento</a><br>
