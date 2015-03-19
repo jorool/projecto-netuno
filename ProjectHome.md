@@ -1,0 +1,1 @@
+simples controle de estoque, clientes e fornecedores
